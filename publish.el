@@ -146,7 +146,7 @@
   (list `(header (@ (class "site-header"))
                  (div (@ (class "container"))
                       (div (@ (class "site-title"))
-                           (h2 "Suat Karakusoglu")))
+                           (h2 "Suat's Stuff")))
                  (div (@ (class "site-masthead"))
                       (div (@ (class "container"))
                            (nav (@ (class "nav"))
@@ -167,15 +167,10 @@
                       (div (@ (class "row"))
                            (div (@ (class "column"))
                                 (p
-                                 (a (@ (href ,(concat site/site-url "/rss/"))) "RSS Subscription")
+                                 (a (@ (rel "me") (href "https://github.com/suatkarakusoglu/suat_page")) "GitHub")
                                  " · "
-                                 (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "LinkedIn"))
-                                (p "© 2023-... suat.page"))
-                           (div (@ (class "column align-right"))
-                                (p (a (@ (href "https://github.com/suatkarakusoglu/mobilen"))
-                                      (img (@ (src ,(concat site/site-url "/img/site_github_icon.png"))
-                                              (style "width: 80px")
-                                              (alt "Github"))))))))
+                                 (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "LinkedIn")
+                                 ))))
                  (div (@ (class "container"))
                       (div (@ (class "row site-footer-tags"))
                            ,@(when article-tags-unique-list
@@ -360,7 +355,7 @@ holding contextual information."
             block-type
             (or contents
                 (if (string= block-type "cta")
-                    "Bilgi ve Kültür paylaştıkça değer kazanır; <a href=\"/community/\">Şimdi bize katılın</a> :)"
+                    "Breathe."
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
