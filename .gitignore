@@ -4,10 +4,10 @@
 ; Ignore the org-publish cache
 .org-cache/
 
-; Ignore shared content
-docs/
-tags/
-content/news.org
+; Do not Ignore shared content
+# docs/
+# tags/
+# content/news.org
 
 ; Ignore Gemini output
 gemini/
