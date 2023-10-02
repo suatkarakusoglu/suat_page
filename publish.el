@@ -146,7 +146,7 @@
   (list `(header (@ (class "site-header"))
                  (div (@ (class "container"))
                       (div (@ (class "site-title"))
-                           (h1 "Suat Karakusoglu")))
+                           (h2 "Suat Karakusoglu")))
                  (div (@ (class "site-masthead"))
                       (div (@ (class "container"))
                            (nav (@ (class "nav"))
@@ -167,18 +167,15 @@
                       (div (@ (class "row"))
                            (div (@ (class "column"))
                                 (p
-                                 ;; TODO: Create Privacy policy.
-                                 ;; (a (@ (href ,(concat site/site-url "/privacy-policy/"))) "Gizlilik Sözleşmesi")
-                                 ;; " · "
-                                 (a (@ (href ,(concat site/site-url "/rss/"))) "RSS Bülteni")
+                                 (a (@ (href ,(concat site/site-url "/rss/"))) "RSS Subscription")
                                  " · "
-                                 (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "s13u"))
-                                (p "© 2023-2024 Mobilen"))
+                                 (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "LinkedIn"))
+                                (p "© 2023-... suat.page"))
                            (div (@ (class "column align-right"))
                                 (p (a (@ (href "https://github.com/suatkarakusoglu/mobilen"))
                                       (img (@ (src ,(concat site/site-url "/img/site_github_icon.png"))
                                               (style "width: 80px")
-                                              (alt "Github'da Katkıda Bulun"))))))))
+                                              (alt "Github"))))))))
                  (div (@ (class "container"))
                       (div (@ (class "row site-footer-tags"))
                            ,@(when article-tags-unique-list
