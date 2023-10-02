@@ -1,0 +1,19 @@
+; Don't commit downloaded Emacs packages
+.packages/
+
+; Ignore the org-publish cache
+.org-cache/
+
+; Ignore shared content
+docs/
+tags/
+content/news.org
+
+; Ignore Gemini output
+gemini/
+
+; Ignore auto generated MacOS files.
+.DS_Store
+
+; Ignore emacs virtual comments file
+.evc

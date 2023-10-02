@@ -1,0 +1,10 @@
+#+title: Welcome
+
+I'm Suat.
+
+This is where i share stuff.
+
+[[file:news.org][All contents]] are here.
+
+#+begin_cta
+#+end_cta

@@ -1,0 +1,5 @@
+#+title: RSS Contents
+
+Here is subscription link:
+
+- [[file:news.xml][Suat's Page]]

@@ -1,0 +1,6 @@
+Makefile includes commands.
+
+* Generate Web-site
+#+begin_src shell
+  makefile generate-site
+#+end_src
