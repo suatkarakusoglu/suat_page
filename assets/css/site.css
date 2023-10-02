@@ -1,52 +1,52 @@
 /*
  * Globals
  */
-/* Light: ef-summer */
+/* Dark: ef-cherie */
 
 :root {
     box-sizing: border-box;
     /* Solid colors */
-    --red            :#d3303a;
-    --red-warmer     :#e00033;
-    --red-cooler     :#d50f7f;
-    --red-faint      :#c24552;
-    --green          :#217a3c;
-    --green-warmer   :#4a7d00;
-    --green-cooler   :#007f68;
-    --green-faint    :#61756c;
-    --yellow         :#a45f22;
-    --yellow-warmer  :#b6532f;
-    --yellow-cooler  :#b65050;
-    --yellow-faint   :#9a5f6a;
-    --blue           :#375ce6;
-    --blue-warmer    :#5250ef;
-    --blue-cooler    :#065fff;
-    --blue-faint     :#6060d0;
-    --magenta        :#ba35af;
-    --magenta-warmer :#cb1aaa;
-    --magenta-cooler :#8e44f3;
-    --magenta-faint  :#a45392;
-    --cyan           :#1f6fbf;
-    --cyan-warmer    :#3f6faf;
-    --cyan-cooler    :#0f7b8f;
-    --cyan-faint     :#5f60bf;
+    --red             :#ba2d2f;
+    --red-warmer      :#ce3f00;
+    --red-cooler      :#cf2f4f;
+    --red-faint       :#b05350;
+    --green           :#007a0a;
+    --green-warmer    :#5a7400;
+    --green-cooler    :#0f7f5f;
+    --green-faint     :#61756c;
+    --yellow          :#a45a22;
+    --yellow-warmer   :#b75515;
+    --yellow-cooler   :#aa4f30;
+    --yellow-faint    :#9a625a;
+    --blue            :#375cc6;
+    --blue-warmer     :#5f5fdf;
+    --blue-cooler     :#265fbf;
+    --blue-faint      :#4a659f;
+    --magenta         :#ca3e54;
+    --magenta-warmer  :#cb2f80;
+    --magenta-cooler  :#8448aa;
+    --magenta-faint   :#a04450;
+    --cyan            :#3f60af;
+    --cyan-warmer     :#3f6faf;
+    --cyan-cooler     :#0f7b8f;
+    --cyan-faint      :#4f6f8f;
 
     /* Relative colors */
-    --bg-main        :#fff2f3;
-    --fg-main        :#4f4073;
-    --bg-dim         :#f2e4ea;
-    --fg-dim         :#786e74;
-    --bg-alt         :#efd3e4;
-    --fg-alt         :#af4988;
-    --bg-active      :#cfb3c4;
-    --bg-inactive    :#f7ebee;
+    --bg-main     :#fff5ea;
+    --fg-main     :#584141;
+    --bg-dim      :#f2e9db;
+    --fg-dim      :#63728f;
+    --bg-alt      :#e9e0d8;
+    --fg-alt      :#8f5f4a;
+    --bg-active   :#c9c0b8;
+    --bg-inactive :#f7efe6;
 
     --header1        :var(--magenta-cooler);
     --header2        :var(--magenta);
     --header3        :var(--magenta-warmer);
     --header4        :var(--magenta-faint);
-    --href           :var(--yellow);
-    --href-active    :var(--yellow-warmer);
+    --href           :var(--red);
+    --href-active    :var(--red-warmer);
     --code           :var(--red-cooler);
     --navbar-fg      :#efd3e4
 }
@@ -271,11 +271,6 @@ strong {
     max-width: 60rem;
 }
 
-.content-image {
-    border-radius: 8px;
-    border: 1px solid var(--bg-alt);
-}
-
 .tag {
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -415,7 +410,7 @@ strong {
     color: var(--fg-main);
     font-size: 1rem;
     background-color: var(--bg-main);
-    border-top: 0.05rem solid var(--bg-alt);
+    border-top: 0.05rem solid #c3e88d;
 }
 
 .site-footer p:last-child {

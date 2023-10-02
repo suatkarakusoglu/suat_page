@@ -4,6 +4,14 @@
 ;; Initialize package sources
 (require 'package)
 
+(setq user-full-name "Suat Karakusoglu")
+(setq user-mail-address "suatkarakusoglu@gmail.com")
+
+(defvar site/site-url (if (string-equal (getenv "PRODUCTION") "true")
+                          "https://suat.page"
+                        "http://localhost:8080")
+  "The URL for the site being generated.")
+
 (setq package-user-dir (expand-file-name "./.packages"))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -122,14 +130,6 @@
 (defun site/embed-video (video-id)
   (format yt-iframe-format video-id))
 
-(setq user-full-name "Suat Karakuşoğlu")
-(setq user-mail-address "suatkarakusoglu@gmail.com")
-
-(defvar site/site-url (if (string-equal (getenv "PRODUCTION") "true")
-                          "https://mobilen.art"
-                        "http://localhost:8080")
-  "The URL for the site being generated.")
-
 (org-link-set-parameters
  "yt"
  :follow
@@ -146,7 +146,7 @@
   (list `(header (@ (class "site-header"))
                  (div (@ (class "container"))
                       (div (@ (class "site-title"))
-                           (h2 "Suat's Stuff")))
+                           (h2 "Suat's Page")))
                  (div (@ (class "site-masthead"))
                       (div (@ (class "container"))
                            (nav (@ (class "nav"))
@@ -214,13 +214,13 @@
     `(html (@ (lang "en"))
            (head
             (meta (@ (charset "utf-8")))
-            (meta (@ (author "Mobilen - Suat Karakuşoğlu")))
+            (meta (@ (author "Suat Karakusoglu")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
             (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
             (link (@ (rel "alternative")
                      (type "application/rss+xml")
-                     (title "Mobilen Yazılar")
+                     (title "Suat's Page")
                      (href ,(concat site/site-url "/rss/news.xml"))))
             (link (@ (rel "stylesheet") (href ,(concat site/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet") (href ,(concat site/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
@@ -384,31 +384,6 @@ holding contextual information."
                           plist
                           article-path))))
 
-(defun site/publish-newsletter-page (plist filename pub-dir)
-  "Publish a newsletter .txt file to a simple HTML page."
-  (let* ((issue-name (file-name-sans-extension
-                      (file-name-nondirectory filename)))
-         (output-file (expand-file-name
-                       (concat issue-name ".html")
-                       pub-dir))
-         (contents (with-temp-buffer
-                     (insert-file-contents filename)
-                     (buffer-string))))
-    (with-temp-file output-file
-      (insert
-       (site/generate-page
-        (concat "Issue "
-                (nth 2 (split-string issue-name "-")))
-        (format "<pre class=\"newsletter-text\">%s</pre>"
-                (replace-regexp-in-string
-                 "\\(http\\|https\\)://[^ \t\n\r<>\"']*[^ \t\n\r<>\".,;!?']"
-                 (lambda (match)
-                   (format "<a href=\"%s\">%s</a>" match match))
-                 contents))
-        '()
-        :exclude-header t
-        :exclude-footer t)))))
-
 (setq org-publish-use-timestamps-flag t
       org-publish-timestamp-directory "./.org-cache/"
       org-export-with-section-numbers nil
@@ -426,24 +401,12 @@ holding contextual information."
       org-export-with-toc nil
       make-backup-files nil)
 
-(defun site/format-live-stream-entry (entry style project)
+(defun site/format-news-entry (entry style project)
   "Format posts with author and published data in the index page."
   (cond ((not (directory-name-p entry))
          (format "[[file:%s][%s]] - %s"
                  entry
                  (org-publish-find-title entry project)
-                 (format-time-string "%B %d, %Y"
-                                     (org-publish-find-date entry project))))
-        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
-        (t entry)))
-
-(defun site/format-news-entry (entry style project)
-  "Format posts with author and published data in the index page."
-  (cond ((not (directory-name-p entry))
-         (format "[[file:%s][%s]] - %s · %s"
-                 entry
-                 (org-publish-find-title entry project)
-                 (car (org-publish-find-property entry :author project))
                  (format-time-string "%B %d, %Y"
                                      (org-publish-find-date entry project))))
         ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
@@ -501,7 +464,7 @@ holding contextual information."
               :publishing-function org-html-publish-to-html
               :auto-sitemap t
               :sitemap-filename "../news.org"
-              :sitemap-title "Yazılar"
+              :sitemap-title "Contents"
               :sitemap-format-entry site/format-news-entry
               :sitemap-style list
               ;; :sitemap-function site/news-sitemap
@@ -543,9 +506,9 @@ holding contextual information."
                              (directory-files-recursively "news"
                                                           ".*\\.html$")))
                    :builder 'webfeeder-make-rss
-                   :title "Mobilen Yazılar"
-                   :description "Mobilen Dünyasından Bilgiler ..."
-                   :author "Suat Karakuşoğlu")
+                   :title "Suat's Contents"
+                   :description "Shared contents by Suat"
+                   :author "Suat Karakusoglu")
 
   ;; Copy the domains file to ensure the custom domain resolves
   (copy-file ".domains" "docs/.domains" t)
