@@ -228,7 +228,7 @@
             (link (@ (rel "stylesheet") (href ,(concat site/site-url "/css/site.css"))))
             (link (@ (rel "stylesheet") (href ,(concat site/site-url "/css/code_highlighter_dark_theme.css"))))
             ,(when head-extra head-extra)
-            (title ,(concat title " - Mobilen")))
+            (title ,(concat title "- Suat's Page")))
            (body ,@(unless exclude-header
                      (site/site-header))
                  (div (@ (class "container"))
@@ -243,15 +243,11 @@
                                 (site/embed-video video-id))
                            ,(when pre-content pre-content)
                            (div (@ (id "content"))
-                                ,content))
-                      ;; Do not show subscription list form
-                      ;; ,(site/embed-list-form)
-                      )
+                                ,content)))
                  ,@(unless exclude-footer
                      (site/site-footer)))))))
 
 (defun site/org-html-template (contents info)
-  ;; (message (plist-get info :filetags))
   (site/generate-page (org-export-data (plist-get info :title) info)
                       contents
                       info
