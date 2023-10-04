@@ -3,3 +3,9 @@
 I'm Suat Karakusoglu.
 
 This page is where I share stuff.
+
+[[https://github.com/suatkarakusoglu][Github]]
+
+[[https://literal.club/suat][Literal Book Club]]
+
+[[https://www.youtube.com/channel/UChFylyoLv51kdrzrT5G0Flw][Youtube Channel]]
