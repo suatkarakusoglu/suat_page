@@ -167,9 +167,13 @@
                       (div (@ (class "row"))
                            (div (@ (class "column"))
                                 (p
-                                 (a (@ (rel "me") (href "https://github.com/suatkarakusoglu/suat_page")) "GitHub")
-                                 " · "
                                  (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "LinkedIn")
+                                 " · "
+                                 (a (@ (rel "me") (href "https://github.com/suatkarakusoglu")) "Github")
+                                 " · "
+                                 (a (@ (rel "me") (href "https://literal.club/suat")) "Literal Book")
+                                 " · "
+                                 (a (@ (rel "me") (href "https://www.youtube.com/channel/UChFylyoLv51kdrzrT5G0Flw")) "YouTube")
                                  ))))
                  (div (@ (class "container"))
                       (div (@ (class "row site-footer-tags"))
